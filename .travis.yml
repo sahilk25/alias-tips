@@ -1,6 +1,5 @@
-language: python
+language: python3
 python:
-  - "2.7"
-  - "3.5"
+  - "3.8"
 sudo: false
-script: python -m unittest test_alias-tips
+script: python3 -m unittest test_alias-tips

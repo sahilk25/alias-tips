@@ -20,7 +20,7 @@ def run_blackboxed_exit_code(args, aliases):
 
 
 def run_process(args):
-    return subprocess.Popen(['python', './alias-tips.py', args], stdout=PIPE, stdin=PIPE, stderr=PIPE)
+    return subprocess.Popen(['python3', './alias-tips.py', args], stdout=PIPE, stdin=PIPE, stderr=PIPE)
 
 
 class TestAliasTipFormatting(TestCase):

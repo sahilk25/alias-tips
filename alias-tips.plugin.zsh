@@ -7,7 +7,7 @@ if [[ -L ${0:a} ]]; then
   _alias_tips__PLUGIN_DIR=${_alias_tips__PLUGIN_DIR:h}
 fi
 
-#export ZSH_PLUGINS_ALIAS_TIPS_TEXT="💡 Alias tip: "
+export ZSH_PLUGINS_ALIAS_TIPS_TEXT="💡 Alias tip: "
 #export ZSH_PLUGINS_ALIAS_TIPS_EXCLUDES="_ c"
 #export ZSH_PLUGINS_ALIAS_TIPS_EXPAND=0
 
@@ -45,7 +45,7 @@ _alias_tips__preexec () {
   # Exit code returned from python script when we want to force use of aliases.
   local force_exit_code=10
   echo $shell_functions "\n" $git_aliases "\n" $shell_aliases | \
-    python ${_alias_tips__PLUGIN_DIR}/alias-tips.py $*
+    python3 ${_alias_tips__PLUGIN_DIR}/alias-tips.py $*
   ret=$?
   if [[ $ret = $force_exit_code ]]; then kill -s INT $$ ; fi
 }
